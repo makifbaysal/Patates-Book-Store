@@ -1,0 +1,597 @@
+{
+  "or": "veya",
+  "loading": "Yükleniyor",
+  "yes": "Evet",
+  "no": "Hayır",
+  "cart": "Cart",
+  "Login": {
+    "header": "Giriş Yap",
+    "email": "Eposta Adresi",
+    "password": "Parola",
+    "forgetPassword": "Şifremi unuttum",
+    "login": "Giriş Yap",
+    "withoutUser": "Üye olmadan devam et",
+    "doNotYouHaveAccount": "Bir hesabın yok mu?",
+    "sentResetMail": "Mail Gönder",
+    "sentResetMailSuccess": "Parola sıfırlama maili gönderildi",
+    "userNotExist": "Bu eposta adresine ait bir kullanıcı mevcut değil",
+    "createAccount": "Üye Ol",
+    "wrongUserNameOrPassword": "Hatalı eposta adresi ya da parola",
+    "enterEmail": "E-posta adresinizi giriniz",
+    "ErrorMessages": {
+      "email": {
+        "pleaseEnterEmail": "Lütfen eposta adresinizi giriniz",
+        "enterValidEmail": "Lütfen geçerli bir eposta adresi giriniz"
+      },
+      "password": {
+        "pleaseEnterPassword": "Lütfen parolanızı giriniz",
+        "enterValidPassword": "Lütfen geçerli bir parola girin"
+      }
+    }
+  },
+  "SignUp": {
+    "header": "Üye Ol",
+    "nameSurname": "Ad Soyad",
+    "email": "Eposta Adresi",
+    "password": "Parola",
+    "passwordAgain": "Parola (Tekrar)",
+    "signUp": "Üye Ol",
+    "doYouHaveAccount": "Bir hesabın var mı?",
+    "login": "Giriş Yap",
+    "userAlreadyExist": "Bu eposta adresine ait bir kullanıcı bulunmakta",
+    "phone": "Telefon Numarası",
+    "enterPhone": "Telefon numaranızı giriniz",
+    "pleaseEnterPhone": "Lütfen telefon numaranızı giriniz",
+    "pleaseEnterValidPhone": "Lütfen geçerli bir telefon numarası giriniz",
+    "ErrorMessages": {
+      "nameSurname": {
+        "enterNameSurname": "Adınızı ve soyadınızı giriniz",
+        "pleaseEnterNameSurname": "Lütfen adınızı ve soyadınızı giriniz",
+        "enterValidNameSurname": "Lütfen adınızı ve soyadınızı uygun formatta giriniz"
+      },
+      "email": {
+        "enterEmail": "E-Posta adresinizi giriniz",
+        "pleaseEnterEmail": "Lütfen eposta adresinizi giriniz",
+        "enterValidEmail": "Lütfen geçerli bir eposta adresi giriniz"
+      },
+      "password": {
+        "pleaseEnterPassword": "Lütfen parolanızı giriniz",
+        "enterValidPassword": "Lütfen geçerli bir parola girin",
+        "passwordDoesNotMatch": "Şifreleriniz uyuşmamaktadır"
+      }
+    }
+  },
+  "AdminHome": {
+    "header": "Admin Paneli",
+    "admin": "Admin",
+    "saleReports": "Satış Raporları",
+    "productManagement": "Ürün Yönetimi",
+    "accountManagement": "Kullanıcı Yönetimi",
+    "orderManagement": "Sipariş Yönetimi",
+    "shippingManagement": "Kargo Yönetimi",
+    "couponManagement": "Kupon Kodu Yönetimi",
+    "messageManagement": "Mesaj Yönetimi"
+  },
+  "AdminCustomerDetails": {
+    "header": "Kullanıcı Detayları",
+    "totalSpent": "Toplam Harcanan Tutar: ",
+    "noOrder": "Sipariş bulunamadı"
+  },
+  "SaleReports": {
+    "header": "Satış Raporları",
+    "totalAccounts": "Toplam Üye",
+    "countOfOrders": "Sipariş Sayısı",
+    "totalIncome": "Elde Edilen Gelir",
+    "mostOrderedCategory": "En çok sipariş alan kategori",
+    "mostPreferedCargoCompany": "En çok tercih edilen kargo firması",
+    "totalUsedCouponCodes": "Kullanılan indirim kuponu sayısı",
+    "mostOrderedUser": "En çok sipariş veren kullanıcı"
+  },
+  "OrderManagement": {
+    "header": "Sipariş Yönetimi",
+    "waitingApproval": "Onay Bekleyenler",
+    "shipped": "Kargoya Verilenler",
+    "requestRefund": "İade Talepleri",
+    "search": "Sipariş Ara",
+    "placeholderSearch": "Sipariş numarası, üye no veya isim giriniz"
+  },
+  "DetailOfOrder": {
+    "header": "Sipariş Detayı",
+    "no": "Sipariş Numarası",
+    "situation": "Sipariş Durumu",
+    "cost": "Sipariş Tutarı",
+    "payment": "Ödeme Şekli",
+    "address": "Kargo Adresi",
+    "coupon": "Kullanılan Kupon",
+    "discount": "İndirim Yüzdesi",
+    "shippingCompany": "Kargo Firması",
+    "countOfProduct": "Ürün Sayısı",
+    "acceptRefund": "İade Talebini Kabul Et",
+    "acceptOrder": "Siparişi Onayla",
+    "countOfProduct2": "Ürün Sayısı: ",
+    "confirm": "Onayla",
+    "ensureConfirmOrder": "Siparişi onaylamak istiyor musunuz?",
+    "stockError": "Stok yetersiz!",
+    "successConfirmOrder": "Sipariş onaylandı",
+    "ensureRefundOrder": "Geri ödemeyi onaylamak istiyor musunuz?",
+    "successRefund": "Geri ödeme talebi onaylandı",
+    "reject": "Reddet",
+    "ensureRejectOrder": "Siparişi reddetmek istiyor musunuz?",
+    "successReject": "Sipariş reddedildi!",
+    "ensureRejectRefund": "Geri ödemeyi reddetmek istiyor musunuz?",
+    "successRejectRefund": "Geri ödeme reddedildi"
+  },
+  "ProductManagement": {
+    "header": "Ürün Yönetimi",
+    "addProduct": "Ürün Ekle",
+    "addCouponCode": "Kupon Kodu Ekle",
+    "search": "Ürün Ara",
+    "placeholderSearch": "Kitap, yazar veya ürün adı giriniz",
+    "searchError": "Aradığınız kriterlere uygun ürün bulunamadı."
+  },
+  "ShippingCompanyManagement": {
+    "header": "Kargo Yönetimi",
+    "addCompany": "Firma Ekle",
+    "search": "Kargo Firması Ara",
+    "placeholderSearch": "Kargo firma adı giriniz",
+    "noCompany": "Kargo Şirketi bulunamadı"
+  },
+  "AddShippingCompany": {
+    "header": "Kargo Firması Ekle",
+    "nameHeader": "Firma Adı",
+    "placeholderName": "Firma adı giriniz",
+    "phoneHeader": "İrtibat Numarası",
+    "placeholderPhone": "İrtibat numarası giriniz",
+    "websiteHeader": "Website",
+    "placeholderWebsite": "Websitesi giriniz",
+    "endDateHeader": "Anlaşma Bitiş Tarihi",
+    "placeholderEndDate": "Anlaşma bitiş tarihi giriniz",
+    "successAdd": "Kargo Firması başarıyla eklendi",
+    "errorAdd": "Kargo Firması Eklenemedi",
+    "successUpdate": "Kargo Firması başarıyla güncellendi",
+    "errorUpdate": "Kargo Firması güncellenirken bir hata oluştu",
+    "update": "Güncelle",
+    "show": "Göster",
+    "pleaseSelectDate": "Lütfen bir tarih seçiniz",
+    "pleaseSelectImage": "Lütfen bir resim seçiniz",
+    "ensureCompany": "Kargo Firması silinsin mi?",
+    "successDelete": "Kargo Firması başarıyla silindi",
+    "errorDelete": "Kargo Firması silinemedi",
+    "agreementPrice": "Anlaşma Fiyatı",
+    "enterPrice": "Fiyat bilgisi giriniz",
+    "pleaseEnterPrice": "Lütfen fiyat bilgisi giriniz"
+  },
+  "UserManagement": {
+    "header": "Kullanıcı Yönetimi",
+    "search": "Kullanıcı Ara",
+    "placeholderSearch": "İsim, email veya telefon no. giriniz",
+    "searchError": "Aradığınız kriterlere uygun kullanıcı bulunamadı."
+  },
+  "DetailOfUser": {
+    "header": "Kullanıcı Bilgileri",
+    "nameSurnameHeader": "Ad Soyad",
+    "emailHeader": "E-posta",
+    "phoneHeader": "Telefon",
+    "resetPassword": "Şifre Sıfırlama Maili Gönder",
+    "deleteAccount": "Kullanıcıyı Sil",
+    "phoneWarning": "Telefon bilgisi mevcut değil",
+    "askResetPasswordMail": "Şifre sıfırlama maili gönderilsin mi?",
+    "askDeleteUser": "Kullanıcıyı silmek istiyor musunuz?",
+    "sentResetMail": "Kullanıcıya şifre sıfırlama maili gönderildi",
+    "errorResetMail": "Mail gönderilirken bir hata oluştu",
+    "successDelete": "Kullanıcı başarılı bir şekilde silindi",
+    "errorDelete": "Kullanıcı Silinemedi"
+  },
+  "CouponManagement": {
+    "header": "Kupon Kodu Yönetimi",
+    "search": "Kupon Kodu Ara",
+    "placeholderSearch": "Kod veya kampanya adı giriniz",
+    "countLeft": "Kalan Kullanım Sayısı ",
+    "totalCount": "Toplam Kullanım Sayısı ",
+    "noCode": "Kupon kodu bulunamadı"
+  },
+  "DetailOfCoupon": {
+    "header": "Kupon Detayları",
+    "leftCount": "Kalan Kupon",
+    "errorUpdate": "Kupon Kodu güncellenemedi",
+    "successUpdate": "Kupon Kodu başarılı bir şekilde güncellendi",
+    "errorDelete": "Kupon Kodu silinemedi",
+    "successDelete": "Kupon Kodu başarılı bir şekilde silindi"
+  },
+  "AddCoupon": {
+    "headerAdd": "Kupon Ekle",
+    "headerEdit": "Kuponu Düzenle",
+    "nameHeader": "Kupon Adı",
+    "placeholderName": "Kupon ismi giriniz",
+    "codeHeader": "Kupon Kodu",
+    "placeholderCode": "Kupon kodu giriniz",
+    "discountHeader": "İndirim Yüzdesi",
+    "placeholderDiscount": "İndirim yüzdesi giriniz",
+    "startDateHeader": "Başlangıç Tarihi",
+    "placeholderStartDate": "Başlangıç tarihi giriniz",
+    "endDateHeader": "Bitiş Tarihi",
+    "placeholderEndDate": "Bitiş tarihi giriniz",
+    "countHeader": "Kullanılan Kupon",
+    "leftCount": "Kalan Kullanım Sayısı",
+    "placeholderCount": "Kullanım sayısı giriniz",
+    "successAdd": "Kupon kodu başarılı bir şekilde eklendi!",
+    "exp": "Açıklama",
+    "enterExp": "Açıklama giriniz",
+    "pleaseEnterExp": "Lütfen açıklama giriniz",
+    "discountValidation": "İndirim yüzdesi 0'dan büyük olmalıdır",
+    "discountValidationGreater": "İndirim yüzdesi 100'dan büyük olamaz",
+    "usageValidation": "Kullanım sayısı 0'dan büyük olmalıdır"
+  },
+  "ProductAdd": {
+    "header": "Ürün Ekle",
+    "bookHeader": "Kitap İsmi",
+    "placeholderBook": "Kitap ismi giriniz",
+    "authorHeader": "Yazar İsmi",
+    "placeholderAuthor": "Yazar ismi giriniz",
+    "priceHeader": "Fiyat",
+    "placeholderPrice": "Fiyat giriniz",
+    "pageNumberHeader": "Sayfa Sayısı",
+    "placeholderPageNumber": "Sayfa sayı giriniz",
+    "categoryHeader": "Kategori",
+    "placeholderCategory": "Kategori yazınız (max. 3 adet)",
+    "aboutBookHeader": "Açıklama",
+    "placeholderAboutBook": "Kitap hakkında açıklama yazınız",
+    "languageHeader": "Dil",
+    "placeholderLanguage": "Dil giriniz",
+    "stockHeader": "Stok",
+    "placeholderStock": "Stok giriniz",
+    "updateProduct": "Ürün Güncelle",
+    "warning": "Ürün eklerken bir hata oldu.",
+    "askDeleteProduct": "Ürünü silmek istiyor musunuz?",
+    "categoryWarningMax": "Maksimum 3 adet kategori girebilirsiniz",
+    "categoryWarningMin": "En az 1 adet kategori ekleyiniz",
+    "successUpdate": "Bilgiler başarıyla güncellendi",
+    "errorUpdate": "Bilgiler güncellenirken bir hata oldu",
+    "successAdd": "Ürün başarıyla eklendi",
+    "photoWarning": "Resim eklemeniz gerekiyor",
+    "successDelete": "Ürün başarıyla silindi",
+    "errorDelete": "Ürün silinirken bir hata oldu",
+    "priceGreaterThanZero": "Ürün fiyatı 0 olamaz",
+    "pageNotEqualToZero": "Sayfa sayısı 0 olamaz"
+  },
+  "ProductShow": {
+    "header": "Ürün Bilgileri",
+    "bookHeader": "Kitap İsmi",
+    "authorHeader": "Yazar İsmi",
+    "priceHeader": "Fiyat",
+    "pageNumberHeader": "Sayfa Sayısı",
+    "categoryHeader": "Kategori",
+    "aboutBookHeader": "Açıklama",
+    "stockHeader": "Stok",
+    "languageHeader": "Dil"
+  },
+  "ProductDetail": {
+    "review": " İnceleme",
+    "about": "Hakkında",
+    "addToCart": "Sepete Ekle",
+    "page": "Sayfa",
+    "bookmarkError": "Bir hata oldu!",
+    "makeComment": "Yorum Yap",
+    "buyersBought": "Bu kitabı alanlar bunları da aldı.",
+    "noBook": "Kitap bulunamadı.",
+    "alreadyInCart": "Ürün sepette zaten var.",
+    "loginToAddCart": "Sepete kitap ekleyebilmek için giriş yapmanız lazım.",
+    "successAdd": "Ürün başarılı bir şekilde eklendi.",
+    "login": "Giriş Yap",
+    "back": "Geri Dön"
+  },
+  "ProductListing": {
+    "header": "Ürünler",
+    "ascPrice": "Fiyat Artan",
+    "descPrice": "Fiyat Azalan",
+    "sort": "Sırala",
+    "compare": "Karşılaştır"
+  },
+  "ShippingCompanyShow": {
+    "header": "Kargo Firma Bilgileri",
+    "companyNameHeader": "Kargo Firma İsmi",
+    "phoneHeader": "İrtibat Numarası",
+    "websiteHeader": "Website",
+    "contractEndDateHeader": "Anlaşma Bitiş Tarihi"
+  },
+  "ProductLanguages": {
+    "turkish": "Türkçe",
+    "english": "İngilizce",
+    "german": "Almanca",
+    "arabic": "Arapça",
+    "spanish": "İspanyolca",
+    "italian": "İtalyanca"
+  },
+  "Select": "Seçiniz",
+  "Home": {
+    "cartWarning": "Sepeti görüntüleyebilmek için giriş yapmalısınız!",
+    "libraryWarning": "Kitaplığı görüntüleyebilmek için giriş yapmalısınız!",
+    "goBack": "Geri Dön",
+    "welcome": "Hoşgeldiniz ",
+    "logout": "Çıkış Yap",
+    "home": "Ana Sayfa",
+    "categories": "Kategoriler",
+    "library": "Kitaplığım",
+    "cart": "Sepetim",
+    "mostSell": "En Çok Satın Alınanlar",
+    "popularBooks": "Popüler Kitaplar",
+    "noBookinLibrary": "Kitaplığınızda kitap bulunamadı.",
+    "weeklyOpportunity": "Haftalık Fırsatlar",
+    "noBookinSearch": "Arama kriterlerinize uygun kitap bulunamadı."
+  },
+  "Settings": {
+    "header": "Daha Fazla",
+    "account": "Hesabım",
+    "orders": "Siparişlerim",
+    "addresses": "Adreslerim",
+    "cards": "Kartlarım",
+    "help": "Yardım",
+    "about": "Hakkımızda",
+    "settings": "Ayarlar",
+    "logout": "Çıkış Yap",
+    "comments": "Yorumlarım",
+    "coupon_codes": "Kupon Kodlarım",
+    "languages": "Dil Seçenekleri",
+    "notifications": "Bildirimler",
+    "updatePassword": "Parola Güncelle",
+    "deleteAccount": "Hesabı Sil",
+    "ensureDeletingAccount": "Hesabınızı silmek istediğinize emin misiniz?"
+  },
+  "Filter": {
+    "header": "Filtrele",
+    "filterWithWord": "Kelime ile Filtrele",
+    "search": "Ara",
+    "language": "Dil",
+    "category": "Kategori",
+    "adventure": "Macera",
+    "sci-fi": "Bilim-Kurgu",
+    "philosophy": "Felsefe",
+    "classic": "Dünya Klasiği",
+    "noCategory": "Kategori seçili değil.",
+    "apply": "Uygula"
+  },
+  "Cart": {
+    "enterCouponCode": "İndirim kodunu giriniz",
+    "apply": "Uygula",
+    "orderTotal": "Sipariş Toplamı",
+    "goPayment": "Ödemeye Geç",
+    "noProductInCart": "Sepette ürün yok",
+    "min": "Sepetinizin toplamı minimum ₺50 olmalıdır",
+    "noCoupon": "Böyle bir kupon kodu bulunamadı!",
+    "discount": "İndirim tutarı"
+  },
+  "OrderDetails": {
+    "header": "Sipariş Detayları",
+    "savedAddresses": "Kayıtlı Adresler",
+    "shippingCompany": "Kargo Şirketi",
+    "creditCarts": "Kart Bilgileri",
+    "continue": "Devam Et",
+    "noAddress": "Kayıtlı adres bulunamadı.",
+    "noShippingFirm": "Kargo firması bulunamadı.",
+    "noCreditCard": "Kredi kartı bulunamadı."
+  },
+  "OrderAddress": {
+    "addAddress": "Adres Ekle",
+    "editAddress": "Adresi Düzenle",
+    "addressHeader": "Adres Başlığı",
+    "detailOfAddress": "Adres Detayı",
+    "addressHeaderPlaceholder": "Örn. Ev Adresi, İş Adresi",
+    "addressHeaderWarning": "Adres başlığı giriniz",
+    "address": "Adres",
+    "addressPlaceholder": "Adres giriniz",
+    "county": "İlçe",
+    "countyPlaceholder": "İlçe giriniz",
+    "city": "İl",
+    "cityPlaceholder": "İl giriniz",
+    "zipcode": "Posta Kodu",
+    "zipcodePlaceholder": "Posta kodu giriniz",
+    "confirm": "Onayla",
+    "reject": "Vazgeç",
+    "delete": "Sil",
+    "updateAddressError": "Adres güncellenirken hata oluştu.",
+    "updateAddressSuccess": "Adres güncelleme başarılı.",
+    "addAddressError": "Adres eklenirken bir hata oluştu.",
+    "addAddressSuccess": "Adres ekleme başarılı.",
+    "deleteAddressError": "Adres silinirken hata oluştu.",
+    "deleteAddressSuccess": "Adres başarıyla silindi.",
+    "ensureDeleteAddress": "Adresi silmek istediğinize emin misiniz?"
+  },
+  "ConfirmOrder": {
+    "header": "Siparişi Onayla",
+    "cartInfo": "Kart Bilgileri",
+    "cart": "Kredi Kartı",
+    "shippingAddress": "Kargo Adresi",
+    "shippingCompany": "Kargo Şirketi",
+    "deliveryDate": "Teslim Tarihi",
+    "expectedDeliveryDate": "Tahmini teslim tarihidir",
+    "couponCode": "Kupon Kodu",
+    "discount": "İndirim",
+    "orderSummary": "Sipariş Özeti",
+    "shippingCost": "Kargo Ücreti",
+    "total": "Toplam",
+    "pay": "Öde",
+    "fromCard": "Kartınızdan ₺",
+    "confirm": " çekilecektir. Siparişi onaylıyor musunuz?",
+    "fail": "Sipariş verilirken bir hata oluştu!",
+    "insufficientFunds": "Kart bakiyesi yetersiz."
+  },
+  "Comment": {
+    "edit": "Yorumu Düzenle",
+    "add": "Yorum Yap",
+    "editsuccess": "Yorum başarıyla güncellendi.",
+    "editfail": "Yorum güncelleme başarısız",
+    "star": "Puanınız",
+    "header": "Başlık",
+    "addHeader": "Başlık giriniz.",
+    "comment": "Yorumunuz",
+    "commentSuccess": "Yorum başarıyla yapıldı."
+  },
+  "Comments": {
+    "comments": "Yorumlar",
+    "noComment": "Burada hiç yorum yok.",
+    "confirm": "Yorumunuzu silmek istiyor musunuz?",
+    "error": "Yorumu silerken bir hata oluştu.",
+    "success" : "Yorum başarıyla silindi."
+  },
+  "Compare": {
+    "compare": "Karşılaştır",
+    "review": " inceleme",
+    "page": " sayfa",
+    "clear": "Temizle"
+  },
+  "OrderCard": {
+    "addCard": "Kart Ekle",
+    "updateCard": "Kartı Düzenle",
+    "cardOwner": "Kart Sahibi",
+    "nameOnCard": "Kart Üzerindeki İsim",
+    "cardNumber": "Kart Numarası",
+    "enterCardNumber": "Kart numarası giriniz!",
+    "enterFullCardNumber": "Tam kart numarasını giriniz.",
+    "dateFormat": "Ay/Yıl",
+    "date": "Tarih",
+    "enterDate" : "Tarih giriniz.",
+    "expiredDateError": "Kredi kartının tarihi bugünden eski olamaz.",
+    "wrongMonth": "Ay bilgisi 12'den büyük olamaz.",
+    "wrongFormat": "Ay/Yıl formatını doğru giriniz.",
+    "enterCVC": "CVC kodu giriniz.",
+    "enterValidCVC": "Lütfen 3 haneli CVC kodunu giriniz.",
+    "CVCCode": "CVC Kodu",
+    "confirm": "Onayla",
+    "creditCardUpdateSuccess": "Kredi kartı başarıyla güncellendi.",
+    "creditCardUpdateError": "Kredi kartı güncellenirken hata oluştu.",
+    "addCreditCardSuccess": "Kredi kartı başarıyla eklendi.",
+    "addCreditCardError": "Kredi kartı eklenirken hata oluştu.",
+    "delete": "Sil",
+    "deleteCreditCardSuccess": "Kredi kartı başarıyla silindi.",
+    "deleteCreditCardError": "Kredi kartı silinirken bir hata oluştu."
+  },
+  "OrderSummary": {
+    "summary": "Sipariş Özeti",
+    "creditCard": "Kredi Kartı",
+    "couponCode": "Kupon Kodu",
+    "discount": " indirim!)",
+    "orderDate": "Sipariş Tarihi",
+    "productNum": "Ürün sayısı: ",
+    "pay": "Öde"
+  },
+  "About": {
+    "header": "Hakkımızda"
+  },
+  "SettingsOrders": {
+    "header": "Siparişlerim",
+    "waitingApproval": "Onay Bekleyenler",
+    "beDelivered": "Teslim Edilecek",
+    "delivered": "Teslim Edildi",
+    "cancelled": "İptal Edildi",
+    "notApproved": "Onaylanmadı",
+    "waitingRefunds": "Geri Ödeme Bekleyenler",
+    "noOrder": "Sipariş Bulunamadı"
+  },
+  "SettingsOrderDetails": {
+    "numberOfProducts": "Ürün Sayısı ",
+    "wantRefund": "Geri Ödeme İste",
+    "cancel": "İptal Et",
+    "ensureRefund": "Siparişi geri iade etmek istiyor musunuz?",
+    "successRefundRequest": "Geri ödeme talebi iletildi",
+    "ensureCancel": "Siparişi iptal etmek istiyor musunuz?",
+    "successCancelRequest": "Siparişiniz iptal edildi",
+    "ensureGivingOrder": "Siparişi aldığınızı onaylıyor musunuz?",
+    "successGivingOrder": "Siparişi aldığınızı onayladınız"
+  },
+  "SettingsUpdatePassword": {
+    "header": "Parola Güncelle",
+    "oldPassword": "Eski Parolanız",
+    "enterOldPassword": "Eski Parolanızı Giriniz",
+    "newPassword": "Yeni Parolanız",
+    "enterNewPassword": "Yeni Parolanızı Giriniz",
+    "newPasswordAgain": "Yeni Parolanız (Yeniden)",
+    "enterNewPasswordAgain": "Yeni Parolanızı Tekrar Giriniz",
+    "passwordNotMatch": "Şifreler Eşleşmiyor",
+    "update": "Güncelle",
+    "successPasswordUpdate": "Şifre başarılı bir şekilde güncellendi",
+    "errorPasswordUpdate": "Şifre güncellenirken bir hata oluştu"
+  },
+  "Faq": {
+    "header": "Sıkça Sorulan Sorular"
+  },
+  "SettingsHelp": {
+    "header": "Yardım"
+  },
+  "SettingsContact": {
+    "header": "İletişim",
+    "subject": "Konu",
+    "enterSubject": "Konu giriniz",
+    "message": "Mesaj",
+    "enterMessage": "Mesaj yazınız",
+    "send": "Gönder",
+    "messageSuccess": "Mesaj başarılı bir şekilde gönderildi",
+    "messageFail": "Mesaj gönderilemedi"
+  },
+  "SettingsAddresses": {
+    "header": "Adreslerim",
+    "noAddress": "Adresiniz yok"
+  },
+  "SettingsMyCards": {
+    "header": "Kartlarım",
+    "noCard": "Hiç kredi kartınız yok"
+  },
+  "SettingsComments": {
+    "header": "Yorumlarım",
+    "noComment": "Hiç yorum yapmamışsınız"
+  },
+  "SettingsCouponCodes": {
+    "header": "Kupon Kodlarım",
+    "discountPercentage": "İndirim Yüzdesi: ",
+    "expireTime": "Son Kullanma Tarihi: ",
+    "noCode": "Kullanılabilir kupon kodu yok"
+  },
+  "SettingsNotifications": {
+    "header": "Bildirimler",
+    "appNotf": "Uygulama Bildirimleri",
+    "campaigns": "Kampanyalar",
+    "newBooks": "Yeni Kitaplar"
+  },
+  "Account": {
+    "phone": "Cep Telefonu",
+    "enterPhone": "Telefon numaranızı giriniz",
+    "pleaseEnterPhone": "Lütfen telefon numaranızı giriniz",
+    "enterValidPhone": "Lütfen geçerli bir telefon numarası giriniz",
+    "successUpdate": "Bilgileriniz başarıyla güncellendi",
+    "errorSuccess": "Bilgileriniz güncellenemedi",
+    "update": "Güncelle"
+  },
+  "MessageManagement": {
+    "header": "Mesaj Yönetimi",
+    "email": "Kullanıcı Emaili",
+    "noMessage": "Hiç mesaj yok"
+  },
+  "CreditCardBox": {
+    "deleteCard": "Kartı silmek istediğinize emin misiniz?",
+    "yes": "Evet",
+    "no": "Hayır",
+    "deleted": "Kredi Kartı başarıyla silindi",
+    "failed": "Kredi Kartı başarıyla silinemedi"
+  },
+  "SettingsAddressBox": {
+    "details": "Detaylar"
+  },
+  "SettingsOrderBox": {
+    "orderNum": "Sipariş No:",
+    "productNum": "Ürün Sayısı: ",
+    "orderAmount": "Sipariş Tutarı: ₺"
+  },
+  "ShoppingCartCard": {
+    "productQues": "Ürünü sepetten çıkarmak istiyor musunuz?",
+    "productDeleted": "Ürün sepetten silindi.",
+    "productFailed": "Ürün Sepetten Silinirken bir hata oldu!",
+    "productRemove": "Sepetten Çıkart"
+  },
+  "OrderState": {
+    "WaitingForApproval": "Onay Bekliyor",
+    "Refund": "Geri Ödeme Bekliyor",
+    "Shipped": "Kargoya Verildi",
+    "Denied": "Reddedildi",
+    "Cancelled": "İptal Edildi",
+    "Accepted": "Onaylandı"
+  }
+}

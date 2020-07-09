@@ -1,0 +1,598 @@
+{
+  "or": "or",
+  "loading": "Loading",
+  "yes": "Yes",
+  "no": "No",
+  "cart": "Cart",
+  "Login": {
+    "header": "Login",
+    "email": "Email Address",
+    "password": "Password",
+    "forgetPassword": "Forget Password",
+    "login": "Login",
+    "withoutUser": "Continue without membership",
+    "doNotYouHaveAccount": "Don't you have an account?",
+    "sentResetMail": "Send Email",
+    "sentResetMailSuccess": "Password reset email sent.",
+    "userNotExist": "There is no user with this email address.",
+    "createAccount": "Sign Up",
+    "wrongUserNameOrPassword": "Wrong email address or password.",
+    "enterEmail": "Enter email address",
+    "ErrorMessages": {
+      "email": {
+        "pleaseEnterEmail": "Please enter email address",
+        "enterValidEmail": "Please enter valid email address"
+      },
+      "password": {
+        "pleaseEnterPassword": "Please enter password",
+        "enterValidPassword": "Please enter valid password"
+      }
+    }
+  },
+  "SignUp": {
+    "header": "Sign Up",
+    "nameSurname": "Name Surname",
+    "email": "Email Address",
+    "password": "Password",
+    "passwordAgain": "Password (Again)",
+    "signUp": "Sign Up",
+    "doYouHaveAccount": "Do you have an account?",
+    "login": "Login",
+    "userAlreadyExist": "There is a user with this email address",
+    "phone": "Phone Number",
+    "enterPhone": "Enter phone number",
+    "pleaseEnterPhone": "Please enter phone number",
+    "pleaseEnterValidPhone": "Please enter valid phone number",
+    "ErrorMessages": {
+      "nameSurname": {
+        "enterNameSurname": "Please enter name and surname",
+        "pleaseEnterNameSurname": "Please enter name and surname",
+        "enterValidNameSurname": "Please enter name and surname with valid format"
+      },
+      "email": {
+        "enterEmail": "Please enter email address",
+        "pleaseEnterEmail": "Please enter email address",
+        "enterValidEmail": "Please enter valid email address"
+      },
+      "password": {
+        "pleaseEnterPassword": "Please enter password",
+        "enterValidPassword": "Please enter valid password",
+        "passwordDoesNotMatch": "Passwords not match"
+      }
+    }
+  },
+  "AdminHome": {
+    "header": "Admin Panel",
+    "admin": "Admin",
+    "saleReports": "Sale Reports",
+    "productManagement": "Product Management",
+    "accountManagement": "User Management",
+    "orderManagement": "Order Management",
+    "shippingManagement": "Cargo Management",
+    "couponManagement": "Coupon Code Management",
+    "messageManagement": "Message Management"
+  },
+  "AdminCustomerDetails": {
+    "header": "Detail of User",
+    "totalSpent": "Total Spent: ",
+    "noOrder": "No order is found"
+  },
+  "SaleReports": {
+    "header": "Sale Reports",
+    "totalAccounts": "Total User",
+    "countOfOrders": "Number of Orders",
+    "totalIncome": "Total Income",
+    "mostOrderedCategory": "Most Ordered Category",
+    "mostPreferedCargoCompany": "Most Prefered Cargo Company",
+    "totalUsedCouponCodes": "Number of Used Coupon Codes",
+    "mostOrderedUser": "Most Giving Order User"
+  },
+  "OrderManagement": {
+    "header": "Order Management",
+    "waitingApproval": "Waiting for Approval",
+    "shipped": "Shipped",
+    "requestRefund": "Refund Requests",
+    "search": "Search Order",
+    "placeholderSearch": "Enter order number, user number or name."
+  },
+  "DetailOfOrder": {
+    "header": "Detail of Order",
+    "no": "Order Number",
+    "situation": "Order Status",
+    "cost": "Order Amount",
+    "payment": "Payment Method",
+    "address": "Cargo Address",
+    "coupon": "Used Coupon",
+    "discount": "Discount",
+    "shippingCompany": "Cargo Company",
+    "countOfProduct": "Number of Product",
+    "acceptRefund": "Accept Refund Request",
+    "acceptOrder": "Confirm Order",
+    "countOfProduct2": "Number of Products: ",
+    "confirm": "Confirm",
+    "ensureConfirmOrder": "Are you sure to confirm the order?",
+    "stockError": "Insufficient Stock!",
+    "successConfirmOrder": "Order is confirmed",
+    "ensureRefundOrder": "Are you sure to confirm refund of the order?",
+    "successRefund": "Refund of the order is confirmed",
+    "reject": "Reject",
+    "ensureRejectOrder": "Are you sure to reject the order?",
+    "successReject": "Order is rejected!",
+    "ensureRejectRefund": "Are you sure to reject refund of the order?",
+    "successRejectRefund": "Refund of the order is rejected"
+  },
+  "ProductManagement": {
+    "header": "Product Management",
+    "addProduct": "Add Product",
+    "addCouponCode": "Add Coupon Code",
+    "search": "Search Product",
+    "placeholderSearch": "Enter book, author or product name",
+    "searchError": "No products were found according to your search criteria."
+  },
+  "ShippingCompanyManagement": {
+    "header": "Cargo Management",
+    "addCompany": "Add Company",
+    "search": "Search Company",
+    "placeholderSearch": "Enter company name",
+    "noCompany": "There is no shipping company."
+  },
+  "AddShippingCompany": {
+    "header": "Add Cargo Company",
+    "nameHeader": "Company Name",
+    "placeholderName": "Enter company name",
+    "phoneHeader": "Contact Number",
+    "placeholderPhone": "Enter contact number",
+    "websiteHeader": "Website",
+    "placeholderWebsite": "Enter website",
+    "endDateHeader": "Contract End Date",
+    "placeholderEndDate": "Enter Contrtac end date",
+    "successAdd": "Shipping firm added successfully.",
+    "errorAdd": "Shipping firm couldn't be added.",
+    "successUpdate": "Shipping firm updated successfully.",
+    "errorUpdate": "There is an error while updating shipping firm.",
+    "update": "Update",
+    "show": "Show",
+    "pleaseSelectDate": "Select a date.",
+    "pleaseSelectImage": "Select an image.",
+    "ensureCompany": "Do you want to delete shipping firm?",
+    "successDelete": "Shipping firm deleted successfully.",
+    "errorDelete": "Shipping firm couldn't be deleted.",
+    "agreementPrice": "Agreement Price",
+    "enterPrice": "Enter price.",
+    "pleaseEnterPrice": "Please enter price."
+  },
+  "UserManagement": {
+    "header": "User Management",
+    "search": "Search User",
+    "placeholderSearch": "Enter name, email or phone number",
+    "searchError": "No user were found according to your search criteria."
+  },
+  "DetailOfUser": {
+    "header": "Detail of User",
+    "nameSurnameHeader": "Name Surname",
+    "emailHeader": "Email Address",
+    "phoneHeader": "Phone Number",
+    "resetPassword": "Send Password Reset Mail",
+    "deleteAccount": "Delete User",
+    "phoneWarning": "There is no phone number.",
+    "askResetPasswordMail": "Send reset password email?",
+    "askDeleteUser": "Do you want to delete user?",
+    "sentResetMail": "Password reset mail has been sent",
+    "errorResetMail": "There was en error when sending mail",
+    "successDelete": "User successfully deleted",
+    "errorDelete": "User couldn't be deleted"
+  },
+  "CouponManagement": {
+    "header": "Coupon Code Management",
+    "search": "Search Coupon Code",
+    "placeholderSearch": "Enter code or promotion name.",
+    "countLeft": "Remaining Usage ",
+    "totalCount": "Total Number of Uses ",
+    "noCode": "There is no coupon code."
+  },
+  "DetailOfCoupon": {
+    "header": "Detail of Coupon Code",
+    "leftCount": "Remaining Usage ",
+    "errorUpdate": "Coupon code couldn't be updated.",
+    "successUpdate": "Coupon code updated successfully.",
+    "errorDelete": "Coupon code couldn't be deleted.",
+    "successDelete": "Coupon code deleted successfully."
+  },
+  "AddCoupon": {
+    "headerAdd": "Add Coupon Code",
+    "headerEdit": "Edit Coupon Code",
+    "nameHeader": "Promotion Name",
+    "placeholderName": "Enter promotion name",
+    "codeHeader": "Coupon Code",
+    "placeholderCode": "Enter coupon code",
+    "discountHeader": "Discount",
+    "placeholderDiscount": "Enter discount percentage",
+    "startDateHeader": "Start Date",
+    "placeholderStartDate": "Enter start date",
+    "endDateHeader": "End Date",
+    "placeholderEndDate": "Enter end date",
+    "countHeader": "Total Used",
+    "placeholderCount": "Enter total number of uses",
+    "leftCount": "Remaining Usage",
+    "successAdd": "Coupon code added successfully. ",
+    "exp": "Describe",
+    "enterExp": "Enter description.",
+    "pleaseEnterExp": "Please enter description",
+    "discountValidation": "Discount must be greater than 0",
+    "discountValidationGreater": "Discount must be less than 100",
+    "usageValidation": "Usage number must be greater than 0"
+  },
+  "ProductAdd": {
+    "header": "Add Product",
+    "bookHeader": "Book Name",
+    "placeholderBook": "Enter book name",
+    "authorHeader": "Author Name",
+    "placeholderAuthor": "Enter author name",
+    "priceHeader": "Price",
+    "placeholderPrice": "Enter price",
+    "pageNumberHeader": "Number of Page",
+    "placeholderPageNumber": "Enter number of page",
+    "categoryHeader": "Category",
+    "placeholderCategory": "Enter category (max 3)",
+    "aboutBookHeader": "About",
+    "placeholderAboutBook": "Enter about of book",
+    "languageHeader": "Language",
+    "placeholderLanguage": "Enter language",
+    "stockHeader": "Stock",
+    "placeholderStock": "Enter stock",
+    "updateProduct": "Update Product",
+    "warning": "There was an error when adding product.",
+    "askDeleteProduct": "Do you want to delete product?",
+    "categoryWarningMax": "You can enter maximum 3 category.",
+    "categoryWarningMin": "You must add at least 1 category.",
+    "successUpdate": "Product successfully updated",
+    "errorUpdate": "There was an error when updating product",
+    "successAdd": "Product successfully added",
+    "photoWarning": "You need to upload a picture",
+    "successDelete": "Product successfully deleted",
+    "errorDelete": "Product couldn't be deleted",
+    "priceGreaterThanZero": "Price can not equal to zero",
+    "pageNotEqualToZero": "Page can not equal to zero"
+  },
+  "ProductShow": {
+    "header": "Detail of Products",
+    "bookHeader": "Book Name",
+    "authorHeader": "Author Name",
+    "priceHeader": "Price",
+    "pageNumberHeader": "Number of Page",
+    "categoryHeader": "Category",
+    "aboutBookHeader": "About",
+    "stockHeader": "Stock",
+    "languageHeader": "Language"
+  },
+  "ProductDetail": {
+    "review": " Reviews",
+    "about": "About",
+    "addToCart": "Add to Cart",
+    "page": "Pages",
+    "bookmarkError": "There was an error!",
+    "makeComment": "Enter comment.",
+    "buyersBought": "Buyers also bought these books.",
+    "noBook": "There is no book.",
+    "successAdd": "Book added successfully.",
+    "alreadyInCart": "Book is already in cart.",
+    "loginToAddCart": "Please login to add book to cart.",
+    "login": "Login",
+    "back": "Go Back"
+  },
+  "ProductListing": {
+    "header": "Product",
+    "ascPrice": "Price Ascending",
+    "descPrice": "Price Decreasing",
+    "sort": "Sort",
+    "compare": "Compare"
+  },
+  "ShippingCompanyShow": {
+    "header": "Detail of Cargo Company",
+    "companyNameHeader": "Company Name",
+    "phoneHeader": "Contact Number",
+    "websiteHeader": "Website",
+    "contractEndDateHeader": "Contract End Date"
+  },
+  "ProductLanguages": {
+    "turkish": "Turkish",
+    "english": "English",
+    "german": "German",
+    "arabic": "Arabic",
+    "spanish": "Spanish",
+    "italian": "Italian"
+  },
+  "Select": "Select",
+  "Home": {
+    "cartWarning": "You must login to view shopping cart!",
+    "libraryWarning": "You must login to view library!",
+    "goBack": "Go Back",
+    "welcome": "Welcome ",
+    "logout": "Logout",
+    "home": "Home Page",
+    "categories": "Categories",
+    "library": "Library",
+    "cart": "Cart",
+    "mostSell": "Best Sellers",
+    "popularBooks": "Popular Books",
+    "noBookinLibrary": "There is no book in your library.",
+    "weeklyOpportunity": "Weekly Opportunities",
+    "noBookinSearch": "No books were found according to your search."
+  },
+  "Settings": {
+    "header": "More",
+    "account": "My Account",
+    "orders": "My Orders",
+    "addresses": "My Addresses",
+    "cards": "My Credit Cards",
+    "help": "Help",
+    "about": "About Us",
+    "settings": "Settings",
+    "logout": "Logout",
+    "comments": "My Comments",
+    "coupon_codes": "My Coupon Codes",
+    "languages": "Language Options",
+    "notifications": "Notifications",
+    "updatePassword": "Update Password",
+    "deleteAccount": "Delete Account",
+    "ensureDeletingAccount": "Do you confirm to delete account?"
+  },
+  "Filter": {
+    "header": "Filter",
+    "filterWithWord": "Filter with Word",
+    "search": "Search",
+    "language": "Language",
+    "category": "Category",
+    "adventure": "Adventure",
+    "sci-fi": "Science-Fiction",
+    "philosophy": "Philosophy",
+    "classic": "World Classics",
+    "noCategory": "Category isn't selected",
+    "apply": "Apply"
+  },
+  "Cart": {
+    "enterCouponCode": "Enter coupon code",
+    "apply": "Apply",
+    "orderTotal": "Total of Order",
+    "goPayment": "Checkout",
+    "noProductInCart": "There is no product in shopping card.",
+    "min": "Cart total must at least ₺50",
+    "noCoupon": "Wrong coupon code!",
+    "discount": "Discount"
+  },
+  "OrderDetails": {
+    "header": "Order Details",
+    "savedAddresses": "Saved Addresses",
+    "shippingCompany": "Shipping Company",
+    "creditCarts": "Credit Carts",
+    "continue": "Continue",
+    "noAddress": "There is no address.",
+    "noShippingFirm": "There is no shipping firm.",
+    "noCreditCard": "There is no credit card."
+  },
+  "Comment": {
+    "edit": "Edit Comment",
+    "add": "Add Comment",
+    "editsuccess": "Comment updated successfully",
+    "editfail": "Comment update unsuccessfull.",
+    "star": "Star",
+    "header": "Header",
+    "addHeader": "Add header.",
+    "comment": "Comment",
+    "commentSuccess": "Comment successfully added."
+  },
+  "Comments": {
+    "comments": "Comments",
+    "noComment": "There is no comment.",
+    "confirm": "Do you want to delete your comment?",
+    "error": "There is an error while deleting comment.",
+    "success" : "Comment has been deleted successfully."
+  },
+  "Compare": {
+    "compare": "Compare",
+    "review": " review",
+    "page": " page",
+    "clear": "Clear"
+  },
+  "ConfirmOrder": {
+    "header": "Confirm Order",
+    "cartInfo": "Credit Card Info",
+    "cart": "Credit Card",
+    "shippingAddress": "Shipping Address",
+    "shippingCompany": "Shipping Firm",
+    "deliveryDate": "Delivery Date",
+    "expectedDeliveryDate": "This is expected delivery date.",
+    "couponCode": "Coupon Code",
+    "discount": "Discount",
+    "orderSummary": "Order Summary",
+    "shippingCost": "Shipping Cost",
+    "total": "Total",
+    "pay": "Pay",
+    "fromCard": "From your credit card ₺",
+    "confirm": " will be taken. Do you confirm?",
+    "fail": "There is an error while giving order.",
+    "insufficientFunds": "Insufficient credit card funds!"
+  },
+  "OrderAddress": {
+    "addAddress": "Add Address",
+    "editAddress": "Update Address",
+    "addressHeader": "Address Header",
+    "detailOfAddress": "Detail of Address",
+    "addressHeaderPlaceholder": "Home, Work, etc.",
+    "addressHeaderWarning": "Add address header!",
+    "address": "Address",
+    "addressPlaceholder": "Address",
+    "county": "County",
+    "countyPlaceholder": "County",
+    "city": "City",
+    "cityPlaceholder": "City",
+    "zipcode": "ZipCode",
+    "zipcodePlaceholder": "ZipCode",
+    "confirm": "Confirm",
+    "reject": "Reject",
+    "delete": "Delete",
+    "updateAddressError": "There is an error while updating address.",
+    "updateAddressSuccess": "Address updated successfully.",
+    "addAddressError": "There is an error while adding address.",
+    "addAddressSuccess": "Address added successfully.",
+    "deleteAddressError": "There is an error while deleting address. ",
+    "deleteAddressSuccess": "Address deleted successfully.",
+    "ensureDeleteAddress": "Are you sure to delete the address?"
+  },
+  "OrderCard": {
+    "addCard": "Add Credit Card",
+    "updateCard": "Update Credit Card",
+    "cardOwner": "Credit Card Owner",
+    "nameOnCard": "Name on Credit Card",
+    "cardNumber": "Credit Card Number",
+    "enterCardNumber": "Enter credit card number!",
+    "enterFullCardNumber": "Enter full card number!",
+    "dateFormat": "Month/Year",
+    "date": "Date",
+    "enterDate": "Enter date.",
+    "expiredDateError": "Credit card date expired.",
+    "wrongMonth": "Month cannot be greater than 12.",
+    "wrongMonthYear": "Month/Year cannot be older than current Month/Year",
+    "wrongFormat": "Enter correct date format.",
+    "enterCVC": "Enter CVC code.",
+    "enterValidCVC": "Enter 3 digit CVC code.",
+    "CVCCode": "CVC Code",
+    "confirm": "Confirm",
+    "creditCardUpdateSuccess": "Credit card updated successfully.",
+    "creditCardUpdateError": "There is an error while updating credit card.",
+    "addCreditCardSuccess": "Credit card added successfully.",
+    "addCreditCardError": "There is an error while adding credit card.",
+    "delete": "Delete",
+    "deleteCreditCardSuccess": "Credit card deleted successfully.",
+    "deleteCreditCardError": "There is an error while deleting credit card."
+  },
+  "OrderSummary": {
+    "summary": "Order Summary",
+    "creditCard": "Credit Card",
+    "couponCode": "Coupon Code",
+    "discount": " discount!)",
+    "orderDate": "Order Date",
+    "productNum": "Item number: ",
+    "pay": "Pay"
+  },
+  "About": {
+    "header": "About Us"
+  },
+  "SettingsOrders": {
+    "header": "My Orders",
+    "waitingApproval": "Waiting for Approval",
+    "beDelivered": "Will be Delivered",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "notApproved": "Disapproved",
+    "waitingRefunds": "Waiting for Refund",
+    "noOrder": "There is no order."
+  },
+  "SettingsOrderDetails": {
+    "numberOfProducts": "Number of Products ",
+    "wantRefund": "Refund Request",
+    "cancel": "Cancel",
+    "ensureRefund": "Do you want to refund the order?",
+    "successRefundRequest": "Refund request has been send.",
+    "ensureCancel": "Do you want to cancel the order?",
+    "successCancelRequest": "Order has been cancelled.",
+    "ensureGivingOrder": "Do you confirm the order recieved?",
+    "successGivingOrder": "Order recieve confirmed."
+  },
+  "SettingsUpdatePassword": {
+    "header": "Update Password",
+    "oldPassword": "Old Password",
+    "enterOldPassword": "Enter old password.",
+    "newPassword": "new Password",
+    "enterNewPassword": "Enter new password.",
+    "newPasswordAgain": "Enter new password again.",
+    "enterNewPasswordAgain": "Enter new password again.",
+    "passwordNotMatch": "Passwords doesn't match.",
+    "update": "Update",
+    "successPasswordUpdate": "Password has been updated.",
+    "errorPasswordUpdate": "There is an error while updating password."
+  },
+  "Faq": {
+    "header": "Frequently Asked Questions"
+  },
+  "SettingsHelp": {
+    "header": "Help"
+  },
+  "SettingsContact": {
+    "header": "Contact Us",
+    "subject": "Subject",
+    "enterSubject": "Enter subject",
+    "message": "Message",
+    "enterMessage": "Enter message",
+    "send": "Send",
+    "messageSuccess": "Message was sent successfully",
+    "messageFail": "Message could not be sent"
+  },
+  "SettingsAddresses": {
+    "header": "My Addresses",
+    "noAddress": "You have no saved address"
+  },
+  "SettingsMyCards": {
+    "header": "My Credit Cards",
+    "noCard": "There is no credit card."
+  },
+  "SettingsComments": {
+    "header": "My Comments",
+    "noComment": "You have no comment"
+  },
+  "SettingsCouponCodes": {
+    "header": "My Coupon Codes",
+    "discountPercentage": "Discount Percentage: ",
+    "expireTime": "Expire Time: ",
+    "noCode": "There is no coupon code that can be used"
+  },
+  "SettingsNotifications": {
+    "header": "Notifications",
+    "appNotf": "Application Notifications",
+    "campaigns": "Campaigns",
+    "newBooks": "New Books"
+  },
+  "Account": {
+    "phone": "Phone Number",
+    "enterPhone": "Enter phone number.",
+    "pleaseEnterPhone": "Please enter phone number.",
+    "enterValidPhone": "Please enter valid phone number.",
+    "successUpdate": "Profile successfully updated.",
+    "errorSuccess": "There is an error while updating profile.",
+    "update": "Update"
+  },
+  "MessageManagement": {
+    "header": "Message Management",
+    "email": "User E-mail",
+    "noMessage": "There is no message."
+  },
+  "CreditCardBox": {
+    "deleteCard": "Do you want to delete credit card?",
+    "yes": "Yes",
+    "no": "No",
+    "deleted": "Credit card deleted successfully.",
+    "failed": "Credit card couldn't be deleted."
+  },
+  "SettingsAddressBox": {
+    "details": "Details"
+  },
+  "SettingsOrderBox": {
+    "orderNum": "Order No:",
+    "productNum": "Number of Products:",
+    "orderAmount": "Order Cost: ₺"
+  },
+  "ShoppingCartCard": {
+    "productQues": "Do you want to remove book from cart?",
+    "productDeleted": "Book has been removed from cart.",
+    "productFailed": "There is an error while removing book from cart.",
+    "productRemove": "Remove from Cart"
+  },
+  "OrderState": {
+    "WaitingForApproval": "Waiting for Approval",
+    "Refund": "Waiting for Refund",
+    "Shipped": "Shipped",
+    "Denied": "Rejected",
+    "Cancelled": "Cancelled",
+    "Accepted": "Approved"
+  }
+}
