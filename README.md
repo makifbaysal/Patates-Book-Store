@@ -37,13 +37,13 @@ Download and install Patates Apk from this [link](https://drive.google.com/open?
 </tr>
 <tr>
   <td>
-    <img src="https://github.com/HacettepeUniversityBBM384/bbm384-project-spring2020-patates/blob/master/gifs/admin.gif" width="280"/>
+    <img src="gifs/admin.gif" width="280"/>
   </td>
   <td>
-    <img src="https://github.com/HacettepeUniversityBBM384/bbm384-project-spring2020-patates/blob/master/gifs/add_cart_and_order.gif" width="280"/>
+    <img src="gifs/add_cart_and_order.gif" width="280"/>
   </td>
   <td>
-    <img src="https://github.com/HacettepeUniversityBBM384/bbm384-project-spring2020-patates/blob/master/gifs/comment.gif" width="280"/>
+    <img src="gifs/comment.gif" width="280"/>
  </td>
   </tr>
   
@@ -56,9 +56,9 @@ Download and install Patates Apk from this [link](https://drive.google.com/open?
   <td>List Books</td>
 </tr>
   <tr>
-    <td><img src="https://github.com/HacettepeUniversityBBM384/bbm384-project-spring2020-patates/blob/master/gifs/compare.gif" width="280"/>
+    <td><img src="gifs/compare.gif" width="280"/>
   </td>  
-  <td><img src="https://github.com/HacettepeUniversityBBM384/bbm384-project-spring2020-patates/blob/master/gifs/list_book.gif" width="280"/>
+  <td><img src="gifs/list_book.gif" width="280"/>
  </td>
  
 
