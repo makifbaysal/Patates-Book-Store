@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderProductListingOutputDTO {
-    private String productId;
-    private String imageUrl;
-    private String name;
-    private String author;
-    private int quantity;
-    private double unitPrice;
+  private String productId;
+  private String imageUrl;
+  private String name;
+  private String author;
+  private int quantity;
+  private double unitPrice;
 }

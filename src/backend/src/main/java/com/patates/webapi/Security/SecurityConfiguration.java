@@ -13,26 +13,28 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private static final String[] AUTH_LIST = { //
-            "/**"//
-    };
+  private static final String[] AUTH_LIST = { //
+    "/**" //
+  };
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("username").password(passwordEncoder().encode("password")).roles("ADMIN");
-    }
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth.inMemoryAuthentication()
+        .withUser("username")
+        .password(passwordEncoder().encode("password"))
+        .roles("ADMIN");
+  }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().antMatchers(AUTH_LIST).authenticated().and().httpBasic();
+    http.authorizeRequests().antMatchers(AUTH_LIST).authenticated().and().httpBasic();
 
-        http.csrf().disable();
-    }
+    http.csrf().disable();
+  }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 }

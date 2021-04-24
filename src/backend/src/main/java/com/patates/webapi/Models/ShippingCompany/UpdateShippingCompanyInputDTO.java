@@ -10,11 +10,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateShippingCompanyInputDTO {
-    private String id;
-    private String name;
-    private double price;
-    private String website;
-    private String contactNumber;
-    private Date endDate;
-
+  private String id;
+  private String name;
+  private double price;
+  private String website;
+  private String contactNumber;
+  private Date endDate;
 }

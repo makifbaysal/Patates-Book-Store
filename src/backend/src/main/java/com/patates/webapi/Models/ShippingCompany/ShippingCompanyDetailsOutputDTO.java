@@ -10,12 +10,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ShippingCompanyDetailsOutputDTO {
-    private String id;
-    private String imageUrl;
-    private String name;
-    private double price;
-    private String website;
-    private Date endDate;
-    private String contactNumber;
-
+  private String id;
+  private String imageUrl;
+  private String name;
+  private double price;
+  private String website;
+  private Date endDate;
+  private String contactNumber;
 }

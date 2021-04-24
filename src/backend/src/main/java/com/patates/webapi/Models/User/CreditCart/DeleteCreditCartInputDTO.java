@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeleteCreditCartInputDTO {
-    private String userId;
-    private String cartId;
-
+  private String userId;
+  private String cartId;
 }

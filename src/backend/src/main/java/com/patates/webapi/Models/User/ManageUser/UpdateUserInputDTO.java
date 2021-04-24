@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UpdateUserInputDTO {
 
-    private String idToken;
-    private String email;
-    private String name;
-    private String phone;
-
+  private String idToken;
+  private String email;
+  private String name;
+  private String phone;
 }

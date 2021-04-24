@@ -10,7 +10,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductListingReturnOutputDTO {
-    private List<ProductListingOutputDTO> products;
-    private int productCount;
-
+  private List<ProductListingOutputDTO> products;
+  private int productCount;
 }

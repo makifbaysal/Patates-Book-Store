@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ListCreditCartsOutputDTO {
-    private String cartId;
-    private String cartNumber;
-    private String owner;
-    private String date;
-
+  private String cartId;
+  private String cartNumber;
+  private String owner;
+  private String date;
 }

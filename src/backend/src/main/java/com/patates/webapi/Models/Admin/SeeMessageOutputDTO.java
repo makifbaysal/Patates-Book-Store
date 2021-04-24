@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SeeMessageOutputDTO {
-    private String email;
-    private String subject;
-    private String message;
+  private String email;
+  private String subject;
+  private String message;
 }

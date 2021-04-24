@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UseCouponCodeOutputDTO {
-    private double lowerLimit;
-    private double percentageDiscount;
+  private double lowerLimit;
+  private double percentageDiscount;
 }

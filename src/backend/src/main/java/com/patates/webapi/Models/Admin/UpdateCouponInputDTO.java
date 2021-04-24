@@ -10,15 +10,14 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateCouponInputDTO {
-    private String id;
-    private String header;
-    private String code;
-    private String description;
-    private int remainingQuantity;
-    private int startQuantity;
-    private double lowerLimit;
-    private double percentageDiscount;
-    private Date expireTime;
-    private Date startTime;
-
+  private String id;
+  private String header;
+  private String code;
+  private String description;
+  private int remainingQuantity;
+  private int startQuantity;
+  private double lowerLimit;
+  private double percentageDiscount;
+  private Date expireTime;
+  private Date startTime;
 }

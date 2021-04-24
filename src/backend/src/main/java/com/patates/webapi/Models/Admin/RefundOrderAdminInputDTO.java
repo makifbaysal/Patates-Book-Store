@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RefundOrderAdminInputDTO {
-    private String orderId;
-    private Boolean status;
+  private String orderId;
+  private Boolean status;
 }

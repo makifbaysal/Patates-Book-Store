@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddBookmarkInputDTO {
-    private String userId;
-    private String productId;
-
+  private String userId;
+  private String productId;
 }

@@ -10,9 +10,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetOrdersOutputDTO {
-    String orderId;
-    int quantity;
-    double amountPaid;
-    Date date;
-    int state;
+  String orderId;
+  int quantity;
+  double amountPaid;
+  Date date;
+  int state;
 }

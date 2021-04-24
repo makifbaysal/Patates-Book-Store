@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeleteCommentInputDTO {
-    private String commentId;
-    private String productId;
+  private String commentId;
+  private String productId;
 }

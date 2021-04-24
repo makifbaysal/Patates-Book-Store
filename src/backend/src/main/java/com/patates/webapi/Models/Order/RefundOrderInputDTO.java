@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RefundOrderInputDTO {
-    private String orderId;
+  private String orderId;
 }

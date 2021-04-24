@@ -13,25 +13,22 @@ import java.io.IOException;
 
 public class FirebaseConnection {
 
-    public static Firestore db;
-    public static Bucket bucket;
+  public static Firestore db;
+  public static Bucket bucket;
 
-    public static void FirebaseStartConnection() throws IOException {
-        FileInputStream serviceAccount = new FileInputStream("firebase.json");
+  public static void FirebaseStartConnection() throws IOException {
+    FileInputStream serviceAccount = new FileInputStream("firebase.json");
 
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .setDatabaseUrl("https://project-name.firebaseio.com")
-                .setStorageBucket("project-name.appspot.com")
-                .build();
+    FirebaseOptions options =
+        new FirebaseOptions.Builder()
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .setDatabaseUrl("https://project-name.firebaseio.com")
+            .setStorageBucket("project-name.appspot.com")
+            .build();
 
+    FirebaseApp.initializeApp(options);
 
-        FirebaseApp.initializeApp(options);
-
-        db = FirestoreClient.getFirestore();
-        bucket = StorageClient.getInstance().bucket();
-
-    }
-
-
+    db = FirestoreClient.getFirestore();
+    bucket = StorageClient.getInstance().bucket();
+  }
 }

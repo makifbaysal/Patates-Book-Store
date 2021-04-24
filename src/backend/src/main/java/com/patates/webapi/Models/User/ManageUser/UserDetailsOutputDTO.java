@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDetailsOutputDTO {
-    private String id;
-    private String name;
-    private String email;
-    private String imageUrl;
-    private String phone;
+  private String id;
+  private String name;
+  private String email;
+  private String imageUrl;
+  private String phone;
 }
