@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ConfirmOrderInputDTO {
-    private String orderId;
+  private String orderId;
 }

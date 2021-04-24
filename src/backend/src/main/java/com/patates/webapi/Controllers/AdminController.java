@@ -17,81 +17,84 @@ import java.util.concurrent.ExecutionException;
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
-    AdminService adminService = new AdminService();
+  private final AdminService adminService;
 
-    @GetMapping(value = "/getAdminReports")
-    public AdminReportOutputDTO getAdminReports() throws ExecutionException, InterruptedException {
-        return adminService.getAdminReports();
-    }
+  public AdminController(AdminService adminService) {
+    this.adminService = adminService;
+  }
 
+  @GetMapping(value = "/getAdminReports")
+  public AdminReportOutputDTO getAdminReports() throws ExecutionException, InterruptedException {
+    return adminService.getAdminReports();
+  }
 
-    @RequestMapping(value = "/getUsers", method = RequestMethod.POST)
-    public List<AdminGetUserDetailsOutputDTO> getUsers(@RequestParam(value = "search", defaultValue = "") String search) throws IOException, JSONException, ExecutionException, InterruptedException {
+  @RequestMapping(value = "/getUsers", method = RequestMethod.POST)
+  public List<AdminGetUserDetailsOutputDTO> getUsers(
+      @RequestParam(value = "search", defaultValue = "") String search)
+      throws IOException, JSONException, ExecutionException, InterruptedException {
+    return adminService.getUsers(search);
+  }
 
-        return adminService.getUsers(search);
+  @RequestMapping(value = "/addCouponCode", method = RequestMethod.POST)
+  @CacheEvict(value = "getCouponCodes", allEntries = true)
+  public String addCouponCode(@RequestBody CreateCouponInputDTO createCouponInputDTO)
+      throws ExecutionException, InterruptedException, IOException, FirebaseMessagingException,
+          ParseException {
+    return adminService.addCouponCode(createCouponInputDTO);
+  }
 
-    }
+  @RequestMapping(value = "/deleteCouponCode", method = RequestMethod.POST)
+  @CacheEvict(value = "getCouponCodes", allEntries = true)
+  public String deleteCouponCode(@RequestParam String couponId) {
+    return adminService.deleteCouponCode(couponId);
+  }
 
-    @RequestMapping(value = "/addCouponCode", method = RequestMethod.POST)
-    @CacheEvict(value = "getCouponCodes", allEntries = true)
-    public String addCouponCode(@RequestBody CreateCouponInputDTO createCouponInputDTO) throws ExecutionException, InterruptedException, IOException, FirebaseMessagingException, ParseException {
+  @RequestMapping(value = "/updateCouponCode", method = RequestMethod.POST)
+  @CacheEvict(value = "getCouponCodes", allEntries = true)
+  public String updateCouponCode(@RequestBody UpdateCouponInputDTO updateCouponInputDTO) {
+    return adminService.updateCouponCode(updateCouponInputDTO);
+  }
 
-        return adminService.addCouponCode(createCouponInputDTO);
+  @GetMapping(value = "/getCouponCodes")
+  @Cacheable("getCouponCodes")
+  public List<ListingCouponsOutputDTO> getCouponCodes(
+      @RequestParam(value = "search", defaultValue = "") String search)
+      throws ExecutionException, InterruptedException {
+    return adminService.getCouponCodes(search);
+  }
 
-    }
+  @RequestMapping(value = "/getCouponCodeDetails", method = RequestMethod.POST)
+  public CouponCodeDetailsDTO getCouponCodeDetails(@RequestParam String couponId)
+      throws ExecutionException, InterruptedException {
+    return adminService.getCouponCodeDetails(couponId);
+  }
 
-    @RequestMapping(value = "/deleteCouponCode", method = RequestMethod.POST)
-    @CacheEvict(value = "getCouponCodes", allEntries = true)
-    public String deleteCouponCode(@RequestParam String couponId) {
-        return adminService.deleteCouponCode(couponId);
-    }
+  @RequestMapping(value = "/confirmOrder", method = RequestMethod.POST)
+  public String confirmOrder(@RequestBody AcceptOrderInputDTO acceptOrderInputDTO)
+      throws ExecutionException, InterruptedException {
+    return adminService.confirmOrder(acceptOrderInputDTO);
+  }
 
-    @RequestMapping(value = "/updateCouponCode", method = RequestMethod.POST)
-    @CacheEvict(value = "getCouponCodes", allEntries = true)
-    public String updateCouponCode(@RequestBody UpdateCouponInputDTO updateCouponInputDTO) {
-        return adminService.updateCouponCode(updateCouponInputDTO);
-    }
+  @RequestMapping(value = "/rejectOrder", method = RequestMethod.POST)
+  public String rejectOrder(@RequestBody RejectOrderInputDTO rejectOrderInputDTO)
+      throws ExecutionException, InterruptedException {
+    return adminService.rejectOrder(rejectOrderInputDTO);
+  }
 
-    @GetMapping(value = "/getCouponCodes")
-    @Cacheable("getCouponCodes")
-    public List<ListingCouponsOutputDTO> getCouponCodes(@RequestParam(value = "search", defaultValue = "") String search) throws ExecutionException, InterruptedException {
-        return adminService.getCouponCodes(search);
-    }
+  @RequestMapping(value = "/refundOrder", method = RequestMethod.POST)
+  public String refundOrder(@RequestBody RefundOrderAdminInputDTO refundOrderAdminInputDTO)
+      throws ExecutionException, InterruptedException {
+    return adminService.refundOrder(refundOrderAdminInputDTO);
+  }
 
-    @RequestMapping(value = "/getCouponCodeDetails", method = RequestMethod.POST)
-    public CouponCodeDetailsDTO getCouponCodeDetails(@RequestParam String couponId) throws ExecutionException, InterruptedException {
-        return adminService.getCouponCodeDetails(couponId);
+  @RequestMapping(value = "/seeMessages", method = RequestMethod.POST)
+  public List<SeeMessageOutputDTO> seeMessages() throws ExecutionException, InterruptedException {
+    return adminService.seeMessages();
+  }
 
-    }
-
-    @RequestMapping(value = "/confirmOrder", method = RequestMethod.POST)
-    public String confirmOrder(@RequestBody AcceptOrderInputDTO acceptOrderInputDTO) throws ExecutionException, InterruptedException {
-
-        return adminService.confirmOrder(acceptOrderInputDTO);
-
-    }
-
-    @RequestMapping(value = "/rejectOrder", method = RequestMethod.POST)
-    public String rejectOrder(@RequestBody RejectOrderInputDTO rejectOrderInputDTO) throws ExecutionException, InterruptedException {
-
-        return adminService.rejectOrder(rejectOrderInputDTO);
-
-    }
-
-    @RequestMapping(value = "/refundOrder", method = RequestMethod.POST)
-    public String refundOrder(@RequestBody RefundOrderAdminInputDTO refundOrderAdminInputDTO) throws ExecutionException, InterruptedException {
-        return adminService.refundOrder(refundOrderAdminInputDTO);
-    }
-
-    @RequestMapping(value = "/seeMessages", method = RequestMethod.POST)
-    public List<SeeMessageOutputDTO> seeMessages() throws ExecutionException, InterruptedException {
-        return adminService.seeMessages();
-    }
-
-    @RequestMapping(value = "/firebaseElasticDifferenceTest", method = RequestMethod.POST)
-    public List<String> firebaseElasticDifferenceTest() throws ExecutionException, InterruptedException, JSONException {
-        return adminService.firebaseElasticDifferenceTest();
-    }
-
-
+  @RequestMapping(value = "/firebaseElasticDifferenceTest", method = RequestMethod.POST)
+  public List<String> firebaseElasticDifferenceTest()
+      throws ExecutionException, InterruptedException, JSONException {
+    return adminService.firebaseElasticDifferenceTest();
+  }
 }

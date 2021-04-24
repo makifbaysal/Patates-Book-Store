@@ -7,15 +7,12 @@ import org.springframework.cache.annotation.EnableCaching;
 
 import java.io.IOException;
 
-
 @SpringBootApplication
 @EnableCaching
 public class JavaspringApplication {
-    public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException {
 
-        SpringApplication.run(JavaspringApplication.class, args);
-        FirebaseConnection.FirebaseStartConnection();
-
-
-    }
+    SpringApplication.run(JavaspringApplication.class, args);
+    FirebaseConnection.FirebaseStartConnection();
+  }
 }

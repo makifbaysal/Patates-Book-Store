@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MakeCommentInputDTO {
-    private String userId;
-    private String productId;
-    private String commentHeader;
-    private String comment;
-    private double star;
+  private String userId;
+  private String productId;
+  private String commentHeader;
+  private String comment;
+  private double star;
 }

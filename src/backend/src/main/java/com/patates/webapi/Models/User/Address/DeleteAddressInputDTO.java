@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeleteAddressInputDTO {
-    private String userId;
-    private String addressId;
-
+  private String userId;
+  private String addressId;
 }

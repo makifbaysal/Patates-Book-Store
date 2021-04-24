@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ListAddressOutputDTO {
-    private String addressId;
-    private String header;
-    private String address;
-    private String city;
-    private String county;
-
+  private String addressId;
+  private String header;
+  private String address;
+  private String city;
+  private String county;
 }

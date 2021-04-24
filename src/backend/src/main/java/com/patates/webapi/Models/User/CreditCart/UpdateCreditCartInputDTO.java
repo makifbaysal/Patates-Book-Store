@@ -8,11 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateCreditCartInputDTO {
-    private String userId;
-    private String cartId;
-    private String owner;
-    private String cartNumber;
-    private String date;
-    private String cvc;
-
+  private String userId;
+  private String cartId;
+  private String owner;
+  private String cartNumber;
+  private String date;
+  private String cvc;
 }

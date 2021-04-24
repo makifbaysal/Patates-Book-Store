@@ -11,11 +11,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdminGetUserDetailsOutputDTO {
-    private String id;
-    private String name;
-    private String email;
-    private String imageUrl;
-    private String phone;
-    private List<GetOrdersOutputDTO> orders;
-    private double totalAmount;
+  private String id;
+  private String name;
+  private String email;
+  private String imageUrl;
+  private String phone;
+  private List<GetOrdersOutputDTO> orders;
+  private double totalAmount;
 }

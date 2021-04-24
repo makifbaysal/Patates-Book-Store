@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserCommentOutputDTO {
-    private String commentId;
-    private String productId;
-    private String name;
-    private String commentHeader;
-    private String comment;
-    private double star;
-    private String productName;
+  private String commentId;
+  private String productId;
+  private String name;
+  private String commentHeader;
+  private String comment;
+  private double star;
+  private String productName;
 }

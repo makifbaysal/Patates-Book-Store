@@ -8,11 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddAdressInputDTO {
-    private String userId;
-    private String header;
-    private String address;
-    private String city;
-    private String county;
-    private String zipcode;
-
+  private String userId;
+  private String header;
+  private String address;
+  private String city;
+  private String county;
+  private String zipcode;
 }

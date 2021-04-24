@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdatePasswordInputDTO {
-    private String idToken;
-    private String password;
-    private String oldPassword;
-
+  private String idToken;
+  private String password;
+  private String oldPassword;
 }

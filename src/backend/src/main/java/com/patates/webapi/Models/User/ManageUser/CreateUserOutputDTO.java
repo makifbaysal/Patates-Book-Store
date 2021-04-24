@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateUserOutputDTO {
-    private String name;
-    private String idToken;
-    private String status;
-
+  private String name;
+  private String idToken;
+  private String status;
 }

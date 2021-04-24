@@ -6,74 +6,109 @@ import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.patates.webapi.Enums.OrderEnum;
 import com.patates.webapi.Models.Order.*;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
+@Repository
 public class OrderRepository extends FirebaseConnection {
-    PaymentRepository paymentRepository = new PaymentRepository();
+  private final PaymentRepository paymentRepository;
 
-    public String createOrder(@RequestBody CreateOrderInputDTO createOrderInputDTO) throws ExecutionException, InterruptedException {
-        ApiFuture<String> futureTransaction = db.runTransaction(transaction -> {
-            Map<String, Object> data = new HashMap<>();
-            double couponDiscount = 0;
-            if (createOrderInputDTO.getCoupon() != null) {
-                List<QueryDocumentSnapshot> documentsCodes = db.collection("couponCodes").whereEqualTo("state", true).whereEqualTo("code", createOrderInputDTO.getCoupon()).get().get().getDocuments();
+  public OrderRepository(PaymentRepository paymentRepository) {
+    this.paymentRepository = paymentRepository;
+  }
+
+  public String createOrder(@RequestBody CreateOrderInputDTO createOrderInputDTO)
+      throws ExecutionException, InterruptedException {
+    ApiFuture<String> futureTransaction =
+        db.runTransaction(
+            transaction -> {
+              Map<String, Object> data = new HashMap<>();
+              double couponDiscount = 0;
+              if (createOrderInputDTO.getCoupon() != null) {
+                List<QueryDocumentSnapshot> documentsCodes =
+                    db.collection("couponCodes")
+                        .whereEqualTo("state", true)
+                        .whereEqualTo("code", createOrderInputDTO.getCoupon())
+                        .get()
+                        .get()
+                        .getDocuments();
                 if (documentsCodes.isEmpty()) {
-                    return "Invalid Code";
+                  return "Invalid Code";
                 } else {
-                    if (documentsCodes.get(0).getDate("expireTime").compareTo(new Date()) != 1 || documentsCodes.get(0).getDate("startTime").compareTo(new Date()) != -1 || documentsCodes.get(0).getLong("remainingQuantity") <= 0) {
-                        return "Invalid Code";
-                    }
+                  if (documentsCodes.get(0).getDate("expireTime").compareTo(new Date()) != 1
+                      || documentsCodes.get(0).getDate("startTime").compareTo(new Date()) != -1
+                      || documentsCodes.get(0).getLong("remainingQuantity") <= 0) {
+                    return "Invalid Code";
+                  }
                 }
 
                 DocumentReference docCodeRef = documentsCodes.get(0).getReference();
 
-
-                data.put("remainingQuantity", documentsCodes.get(0).getLong("remainingQuantity").intValue() - 1);
+                data.put(
+                    "remainingQuantity",
+                    documentsCodes.get(0).getLong("remainingQuantity").intValue() - 1);
                 transaction.update(docCodeRef, data);
                 couponDiscount = documentsCodes.get(0).getDouble("percentageDiscount");
-            }
+              }
 
-            if (!paymentRepository.makePayment(createOrderInputDTO.getCartId(), createOrderInputDTO.getAmountPaid())) {
+              if (!paymentRepository.makePayment(
+                  createOrderInputDTO.getCartId(), createOrderInputDTO.getAmountPaid())) {
                 return "Insufficient Funds";
-            }
+              }
 
-            DocumentReference docRef = db.collection("orders").document();
+              DocumentReference docRef = db.collection("orders").document();
 
-            data.clear();
-            data = new HashMap<>();
+              data.clear();
+              data = new HashMap<>();
 
-            data.put("userId", createOrderInputDTO.getUserId());
+              data.put("userId", createOrderInputDTO.getUserId());
 
-            DocumentSnapshot addressDetail = db.collection("users").document(createOrderInputDTO.getUserId()).collection("addresses").document(createOrderInputDTO.getAddressId()).get().get();
+              DocumentSnapshot addressDetail =
+                  db.collection("users")
+                      .document(createOrderInputDTO.getUserId())
+                      .collection("addresses")
+                      .document(createOrderInputDTO.getAddressId())
+                      .get()
+                      .get();
 
-            data.put("address", addressDetail.getString("address") + " " + addressDetail.getString("county") + "/" + addressDetail.getString("city"));
-            data.put("cartId", createOrderInputDTO.getCartId());
-            if (createOrderInputDTO.getCoupon() != null) {
+              data.put(
+                  "address",
+                  addressDetail.getString("address")
+                      + " "
+                      + addressDetail.getString("county")
+                      + "/"
+                      + addressDetail.getString("city"));
+              data.put("cartId", createOrderInputDTO.getCartId());
+              if (createOrderInputDTO.getCoupon() != null) {
                 data.put("coupon", createOrderInputDTO.getCoupon());
                 data.put("couponDiscount", couponDiscount);
-            }
+              }
 
-            data.put("amountPaid", createOrderInputDTO.getAmountPaid());
-            data.put("state", OrderEnum.WaitingForApproval.getValue());
-            data.put("shippingCompanyId", createOrderInputDTO.getShippingCompanyId());
-            data.put("date", new Date());
+              data.put("amountPaid", createOrderInputDTO.getAmountPaid());
+              data.put("state", OrderEnum.WaitingForApproval.getValue());
+              data.put("shippingCompanyId", createOrderInputDTO.getShippingCompanyId());
+              data.put("date", new Date());
 
-            transaction.set(docRef, data);
+              transaction.set(docRef, data);
 
-            DocumentReference userRef = db.collection("users").document(createOrderInputDTO.getUserId());
+              DocumentReference userRef =
+                  db.collection("users").document(createOrderInputDTO.getUserId());
 
-            List<QueryDocumentSnapshot> productList = userRef.collection("shoppingCart").get().get().getDocuments();
+              List<QueryDocumentSnapshot> productList =
+                  userRef.collection("shoppingCart").get().get().getDocuments();
 
-            for (QueryDocumentSnapshot document : productList) {
+              for (QueryDocumentSnapshot document : productList) {
 
-                DocumentReference orderProductRef = docRef.collection("products").document(document.getId());
+                DocumentReference orderProductRef =
+                    docRef.collection("products").document(document.getId());
 
                 DocumentReference productRef = db.collection("products").document(document.getId());
 
-                List<QueryDocumentSnapshot> priceList = productRef.collection("price").get().get().getDocuments();
+                List<QueryDocumentSnapshot> priceList =
+                    productRef.collection("price").get().get().getDocuments();
 
                 double price = priceList.get(priceList.size() - 1).getDouble("price");
 
@@ -85,131 +120,149 @@ public class OrderRepository extends FirebaseConnection {
                 transaction.set(orderProductRef, orderProductData);
 
                 transaction.delete(document.getReference());
-            }
+              }
 
-            return docRef.getId();
+              return docRef.getId();
+            });
 
-        });
+    return futureTransaction.get();
+  }
 
-        return futureTransaction.get();
+  public OrderDetailsOutputDTO orderDetails(String orderId)
+      throws ExecutionException, InterruptedException {
+    OrderDetailsOutputDTO orderDetailsOutputDTO = new OrderDetailsOutputDTO();
+
+    DocumentSnapshot orderDocument = db.collection("orders").document(orderId).get().get();
+
+    orderDetailsOutputDTO.setAddress(orderDocument.getString("address"));
+    orderDetailsOutputDTO.setAmountPaid(orderDocument.getDouble("amountPaid"));
+
+    if (orderDocument.getString("coupon") != null
+        && orderDocument.getDouble("couponDiscount") != null) {
+      orderDetailsOutputDTO.setCoupon(orderDocument.getString("coupon"));
+      orderDetailsOutputDTO.setPercentageDiscount(orderDocument.getDouble("couponDiscount"));
     }
 
-    public OrderDetailsOutputDTO orderDetails(String orderId) throws ExecutionException, InterruptedException {
-        OrderDetailsOutputDTO orderDetailsOutputDTO = new OrderDetailsOutputDTO();
+    DocumentSnapshot cartDocument =
+        db.collection("creditCarts").document(orderDocument.getString("cartId")).get().get();
+    orderDetailsOutputDTO.setCartNo(cartDocument.getString("cartNumber"));
 
-        DocumentSnapshot orderDocument = db.collection("orders").document(orderId).get().get();
+    orderDetailsOutputDTO.setDate(orderDocument.getDate("date"));
 
-        orderDetailsOutputDTO.setAddress(orderDocument.getString("address"));
-        orderDetailsOutputDTO.setAmountPaid(orderDocument.getDouble("amountPaid"));
+    DocumentSnapshot shippingCompanyDocument =
+        db.collection("shippingCompanies")
+            .document(orderDocument.getString("shippingCompanyId"))
+            .get()
+            .get();
 
+    orderDetailsOutputDTO.setShippingCompany(shippingCompanyDocument.getString("name"));
+    orderDetailsOutputDTO.setState(orderDocument.getLong("state").intValue());
 
-        if (orderDocument.getString("coupon") != null && orderDocument.getDouble("couponDiscount") != null) {
-            orderDetailsOutputDTO.setCoupon(orderDocument.getString("coupon"));
-            orderDetailsOutputDTO.setPercentageDiscount(orderDocument.getDouble("couponDiscount"));
-        }
+    orderDetailsOutputDTO.setOrderNo(orderDocument.getId());
 
-        DocumentSnapshot cartDocument = db.collection("creditCarts").document(orderDocument.getString("cartId")).get().get();
-        orderDetailsOutputDTO.setCartNo(cartDocument.getString("cartNumber"));
+    List<QueryDocumentSnapshot> products =
+        orderDocument.getReference().collection("products").get().get().getDocuments();
 
-        orderDetailsOutputDTO.setDate(orderDocument.getDate("date"));
+    List<OrderProductListingOutputDTO> orderProducts = new ArrayList<>();
 
-        DocumentSnapshot shippingCompanyDocument = db.collection("shippingCompanies").document(orderDocument.getString("shippingCompanyId")).get().get();
+    for (QueryDocumentSnapshot product : products) {
+      OrderProductListingOutputDTO orderProduct = new OrderProductListingOutputDTO();
 
-        orderDetailsOutputDTO.setShippingCompany(shippingCompanyDocument.getString("name"));
-        orderDetailsOutputDTO.setState(orderDocument.getLong("state").intValue());
+      orderProduct.setQuantity(product.getLong("quantity").intValue());
+      orderProduct.setUnitPrice(product.getDouble("price"));
 
-        orderDetailsOutputDTO.setOrderNo(orderDocument.getId());
-
-
-        List<QueryDocumentSnapshot> products = orderDocument.getReference().collection("products").get().get().getDocuments();
-
-
-        List<OrderProductListingOutputDTO> orderProducts = new ArrayList<>();
-
-        for (QueryDocumentSnapshot product : products) {
-            OrderProductListingOutputDTO orderProduct = new OrderProductListingOutputDTO();
-
-            orderProduct.setQuantity(product.getLong("quantity").intValue());
-            orderProduct.setUnitPrice(product.getDouble("price"));
-
-            DocumentSnapshot productDocument = db.collection("products").document(product.getId()).get().get();
-            orderProduct.setProductId(product.getId());
-            orderProduct.setName(productDocument.getString("name"));
-            orderProduct.setAuthor(productDocument.getString("author"));
-            orderProduct.setImageUrl(productDocument.getString("image-url"));
-            orderProducts.add(orderProduct);
-        }
-
-
-        orderDetailsOutputDTO.setProducts(orderProducts);
-        return orderDetailsOutputDTO;
-
+      DocumentSnapshot productDocument =
+          db.collection("products").document(product.getId()).get().get();
+      orderProduct.setProductId(product.getId());
+      orderProduct.setName(productDocument.getString("name"));
+      orderProduct.setAuthor(productDocument.getString("author"));
+      orderProduct.setImageUrl(productDocument.getString("image-url"));
+      orderProducts.add(orderProduct);
     }
 
-    public List<GetOrdersOutputDTO> getOrders(String state, String userId) throws ExecutionException, InterruptedException {
-        List<GetOrdersOutputDTO> orderLists = new ArrayList<>();
-        List<QueryDocumentSnapshot> orders;
-        if (state.equals("") && userId.equals("")) {
-            orders = db.collection("orders").get().get().getDocuments();
-        } else if (!state.equals("") && userId.equals("")) {
-            orders = db.collection("orders").whereEqualTo("state", Integer.parseInt(state)).get().get().getDocuments();
-        } else if (state.equals("") && !userId.equals("")) {
-            orders = db.collection("orders").whereEqualTo("userId", userId).get().get().getDocuments();
-        } else {
-            orders = db.collection("orders").whereEqualTo("state", Integer.parseInt(state)).whereEqualTo("userId", userId).get().get().getDocuments();
-        }
+    orderDetailsOutputDTO.setProducts(orderProducts);
+    return orderDetailsOutputDTO;
+  }
 
-        for (QueryDocumentSnapshot order : orders) {
-            GetOrdersOutputDTO addOrder = new GetOrdersOutputDTO();
-
-            addOrder.setAmountPaid(order.getDouble("amountPaid"));
-            addOrder.setDate(order.getDate("date"));
-            addOrder.setOrderId(order.getId());
-            addOrder.setState(order.getLong("state").intValue());
-            addOrder.setQuantity(order.getReference().collection("products").get().get().size());
-
-            orderLists.add(addOrder);
-        }
-        return orderLists;
-
+  public List<GetOrdersOutputDTO> getOrders(String state, String userId)
+      throws ExecutionException, InterruptedException {
+    List<GetOrdersOutputDTO> orderLists = new ArrayList<>();
+    List<QueryDocumentSnapshot> orders;
+    if (state.equals("") && userId.equals("")) {
+      orders = db.collection("orders").get().get().getDocuments();
+    } else if (!state.equals("") && userId.equals("")) {
+      orders =
+          db.collection("orders")
+              .whereEqualTo("state", Integer.parseInt(state))
+              .get()
+              .get()
+              .getDocuments();
+    } else if (state.equals("") && !userId.equals("")) {
+      orders = db.collection("orders").whereEqualTo("userId", userId).get().get().getDocuments();
+    } else {
+      orders =
+          db.collection("orders")
+              .whereEqualTo("state", Integer.parseInt(state))
+              .whereEqualTo("userId", userId)
+              .get()
+              .get()
+              .getDocuments();
     }
 
-    public String cancelOrder(CancelOrderInputDTO cancelOrderInputDTO) throws ExecutionException, InterruptedException {
-        DocumentReference orderReference = db.collection("orders").document(cancelOrderInputDTO.getOrderId());
+    for (QueryDocumentSnapshot order : orders) {
+      GetOrdersOutputDTO addOrder = new GetOrdersOutputDTO();
 
-        Map<String, Object> data = new HashMap<>();
+      addOrder.setAmountPaid(order.getDouble("amountPaid"));
+      addOrder.setDate(order.getDate("date"));
+      addOrder.setOrderId(order.getId());
+      addOrder.setState(order.getLong("state").intValue());
+      addOrder.setQuantity(order.getReference().collection("products").get().get().size());
 
-        data.put("state", OrderEnum.Cancelled.getValue());
-        data.put("cancelDate", new Date());
-        orderReference.update(data);
-
-        return paymentRepository.refund(orderReference.get().get().getString("cartId"), orderReference.get().get().getDouble("amountPaid"));
-
+      orderLists.add(addOrder);
     }
+    return orderLists;
+  }
 
-    public String acceptOrder(AcceptOrderInputDTO acceptOrderInputDTO) {
-        DocumentReference orderReference = db.collection("orders").document(acceptOrderInputDTO.getOrderId());
+  public String cancelOrder(CancelOrderInputDTO cancelOrderInputDTO)
+      throws ExecutionException, InterruptedException {
+    DocumentReference orderReference =
+        db.collection("orders").document(cancelOrderInputDTO.getOrderId());
 
-        Map<String, Object> data = new HashMap<>();
+    Map<String, Object> data = new HashMap<>();
 
-        data.put("state", OrderEnum.Shipped.getValue());
+    data.put("state", OrderEnum.Cancelled.getValue());
+    data.put("cancelDate", new Date());
+    orderReference.update(data);
 
-        data.put("acceptDate", new Date());
-        orderReference.update(data);
-        return "Success";
+    return paymentRepository.refund(
+        orderReference.get().get().getString("cartId"),
+        orderReference.get().get().getDouble("amountPaid"));
+  }
 
-    }
+  public String acceptOrder(AcceptOrderInputDTO acceptOrderInputDTO) {
+    DocumentReference orderReference =
+        db.collection("orders").document(acceptOrderInputDTO.getOrderId());
 
-    public String refundOrder(RefundOrderInputDTO refundOrderInputDTO) throws ExecutionException, InterruptedException {
-        DocumentReference orderReference = db.collection("orders").document(refundOrderInputDTO.getOrderId());
+    Map<String, Object> data = new HashMap<>();
 
-        Map<String, Object> data = new HashMap<>();
+    data.put("state", OrderEnum.Shipped.getValue());
 
-        data.put("state", OrderEnum.Refund.getValue());
+    data.put("acceptDate", new Date());
+    orderReference.update(data);
+    return "Success";
+  }
 
-        data.put("refundRequestDate", new Date());
-        orderReference.update(data);
-        return "Success";
-    }
+  public String refundOrder(RefundOrderInputDTO refundOrderInputDTO)
+      throws ExecutionException, InterruptedException {
+    DocumentReference orderReference =
+        db.collection("orders").document(refundOrderInputDTO.getOrderId());
 
+    Map<String, Object> data = new HashMap<>();
+
+    data.put("state", OrderEnum.Refund.getValue());
+
+    data.put("refundRequestDate", new Date());
+    orderReference.update(data);
+    return "Success";
+  }
 }

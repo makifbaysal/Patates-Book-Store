@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddCreditCartInputDTO {
-    private String userId;
-    private String owner;
-    private String cartNumber;
-    private String date;
-    private String cvc;
-
+  private String userId;
+  private String owner;
+  private String cartNumber;
+  private String date;
+  private String cvc;
 }

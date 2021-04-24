@@ -10,21 +10,20 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductListingOutputDTO implements Comparable {
-    private String id;
-    private String imageUrl;
-    private String name;
-    private String author;
-    private double price;
+  private String id;
+  private String imageUrl;
+  private String name;
+  private String author;
+  private double price;
 
+  @Override
+  public int compareTo(Object o) {
 
-    @Override
-    public int compareTo(Object o) {
-
-        if (price > ((ProductListingOutputDTO) o).price) {
-            return 1;
-        } else if (price < ((ProductListingOutputDTO) o).price) {
-            return -1;
-        }
-        return 0;
+    if (price > ((ProductListingOutputDTO) o).price) {
+      return 1;
+    } else if (price < ((ProductListingOutputDTO) o).price) {
+      return -1;
     }
+    return 0;
+  }
 }

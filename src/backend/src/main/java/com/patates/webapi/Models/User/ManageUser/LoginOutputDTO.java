@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoginOutputDTO {
-    private String idToken;
-    private boolean isAdmin;
-    private String status;
-    private String name;
+  private String idToken;
+  private boolean isAdmin;
+  private String status;
+  private String name;
 
-    public LoginOutputDTO(String status) {
-        this.status = status;
-    }
-
+  public LoginOutputDTO(String status) {
+    this.status = status;
+  }
 }

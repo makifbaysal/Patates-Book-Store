@@ -10,14 +10,13 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateProductInputDTO {
-    private String id;
-    private String description;
-    private ArrayList<String> category;
-    private double price;
-    private String name;
-    private String author;
-    private String language;
-    private int stock;
-    private int page;
-
+  private String id;
+  private String description;
+  private ArrayList<String> category;
+  private double price;
+  private String name;
+  private String author;
+  private String language;
+  private int stock;
+  private int page;
 }

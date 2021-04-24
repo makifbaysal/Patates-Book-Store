@@ -10,13 +10,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ListingCouponsOutputDTO {
-    private String couponId;
-    private String header;
-    private String code;
-    private String description;
-    private Date expireTime;
-    private double percentageDiscount;
-    private double remainingQuantity;
-    private double startQuantity;
-
+  private String couponId;
+  private String header;
+  private String code;
+  private String description;
+  private Date expireTime;
+  private double percentageDiscount;
+  private double remainingQuantity;
+  private double startQuantity;
 }

@@ -8,6 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeleteShippingCompanyInputDTO {
-    private String id;
-
+  private String id;
 }

@@ -10,15 +10,14 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateProductOutputDTO {
-    private String description;
-    private ArrayList<String> category;
-    private double price;
-    private String name;
-    private String author;
-    private String language;
-    private String imageUrl;
-    private int stock;
-    private int page;
-    private boolean state;
-
+  private String description;
+  private ArrayList<String> category;
+  private double price;
+  private String name;
+  private String author;
+  private String language;
+  private String imageUrl;
+  private int stock;
+  private int page;
+  private boolean state;
 }
